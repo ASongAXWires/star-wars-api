@@ -1,4 +1,4 @@
-module.exports = (sequelize, Sequelize, Teams) => {
+const rebels = (sequelize, Sequelize) => {
   return sequelize.define('rebels', {
     id: {
       type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true,
@@ -6,5 +6,6 @@ module.exports = (sequelize, Sequelize, Teams) => {
     name: { type: Sequelize.STRING, },
     callSign: { type: Sequelize.STRING, },
     rank: { type: Sequelize.STRING, },
-  })
+  }, { paranoid: true })
 }
+module.exports = rebels
